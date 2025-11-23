@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Du principe d'action de Maupertuis à l'équation de Schrödinger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Du principe d'action de Maupertuis à l'équation de Schrödinger</h1>
+    <p class="subtitle">
+      Mindmap + notes détaillées (nœuds et arêtes) — clic sur la carte pour voir le détail.
+    </p>
+  </header>
+
+  <main class="layout">
+    <!-- Colonne gauche : mindmap SVG -->
+    <section id="mindmap-section">
+      <h2>Carte mentale</h2>
+      <p class="hint">Clique sur un nœud ou une arête pour afficher l'explication correspondante.</p>
+      <div class="mindmap-wrapper">
+        <!-- SVG de la mindmap -->
+        <svg width="1300" height="800" viewBox="0 0 1300 800"
+             xmlns="http://www.w3.org/2000/svg" class="mindmap-svg">
+
+          <defs>
+            <!-- Flèches -->
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3"
+                    orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L10,3 L0,6 z" />
+            </marker>
+
+            <!-- Styles internes au SVG -->
+            <style><![CDATA[
+              .node rect {
+                fill: #f8f8ff;
+                stroke: #555;
+                stroke-width: 1.5;
+                rx: 16;
+                ry: 16;
+              }
+              .node text {
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 14px;
+                text-anchor: middle;
+                dominant-baseline: middle;
+              }
+              .title {
+                font-size: 16px;
+                font-weight: bold;
+              }
+              .edge {
+                stroke: #444;
+                stroke-width: 1.5;
+                fill: none;
+                marker-end: url(#arrow);
+              }
+              .label {
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 12px;
+                fill: #333;
+              }
+              .node.svg-active rect {
+                stroke: #2563eb;
+                stroke-width: 2.5;
+              }
+              .edge.svg-active {
+                stroke: #2563eb;
+                stroke-width: 3;
+              }
+            ]]></style>
+          </defs>
+
+          <!-- Fond -->
+          <rect x="0" y="0" width="1300" height="800" fill="#ffffff"/>
+
+          <!-- Titre central -->
+          <text x="650" y="60" class="title">
+            Du principe d&apos;action de Maupertuis à l&apos;équation de Schrödinger
+          </text>
+
+          <!-- ==== NŒUDS ==== -->
+
+          <!-- N1: Maupertuis -->
+          <g class="node"
+             id="maupertuis"
+             data-type="node"
+             data-target="node-maupertuis"
+             transform="translate(80,345)">
+            <rect width="260" height="110"/>
+            <text x="130" y="45">
+              <tspan x="130" dy="-8" class="title">Principe de moindre action</tspan>
+              <tspan x="130" dy="22">(Maupertuis, 1744)</tspan>
+            </text>
+          </g>
+
+          <!-- N2: Lagrange/Euler -->
+          <g class="node"
+             id="lagrange"
+             data-type="node"
+             data-target="node-lagrange"
+             transform="translate(380,150)">
+            <rect width="260" height="110"/>
+            <text x="130" y="45">
+              <tspan x="130" dy="-10" class="title">Formalisme lagrangien</tspan>
+              <tspan x="130" dy="22">L = T − V</tspan>
+              <tspan x="130" dy="18">équations d&apos;Euler–Lagrange</tspan>
+            </text>
+          </g>
+
+          <!-- N3: Hamilton -->
+          <g class="node"
+             id="hamilton"
+             data-type="node"
+             data-target="node-hamilton"
+             transform="translate(380,470)">
+            <rect width="260" height="110"/>
+            <text x="130" y="45">
+              <tspan x="130" dy="-10" class="title">Formalisme hamiltonien</tspan>
+              <tspan x="130" dy="22">H(p, q)</tspan>
+              <tspan x="130" dy="18">équations canoniques</tspan>
+            </text>
+          </g>
+
+          <!-- N4: Hamilton–Jacobi -->
+          <g class="node"
+             id="hj"
+             data-type="node"
+             data-target="node-hj"
+             transform="translate(700,150)">
+            <rect width="260" height="110"/>
+            <text x="130" y="40">
+              <tspan x="130" dy="-12" class="title">Équation de Hamilton–Jacobi</tspan>
+              <tspan x="130" dy="22">H(q, ∂S/∂q, t) + ∂S/∂t = 0</tspan>
+              <tspan x="130" dy="18">S : fonction action</tspan>
+            </text>
+          </g>
+
+          <!-- N5: Action comme phase -->
+          <g class="node"
+             id="phase"
+             data-type="node"
+             data-target="node-phase"
+             transform="translate(700,470)">
+            <rect width="260" height="110"/>
+            <text x="130" y="45">
+              <tspan x="130" dy="-10" class="title">Action et phase</tspan>
+              <tspan x="130" dy="22">ψ ∼ exp(i S / ħ)</tspan>
+            </text>
+          </g>
+
+          <!-- N6: de Broglie -->
+          <g class="node"
+             id="debroglie"
+             data-type="node"
+             data-target="node-debroglie"
+             transform="translate(1020,150)">
+            <rect width="260" height="110"/>
+            <text x="130" y="40">
+              <tspan x="130" dy="-12" class="title">Ondes de matière</tspan>
+              <tspan x="130" dy="22">(de Broglie)</tspan>
+              <tspan x="130" dy="18">p = ħk, E = ħω</tspan>
+            </text>
+          </g>
+
+          <!-- N7: Opérateurs quantiques -->
+          <g class="node"
+             id="op"
+             data-type="node"
+             data-target="node-op"
+             transform="translate(1020,470)">
+            <rect width="260" height="110"/>
+            <text x="130" y="40">
+              <tspan x="130" dy="-12" class="title">Quantification &amp; opérateurs</tspan>
+              <tspan x="130" dy="22">E → iħ ∂/∂t</tspan>
+              <tspan x="130" dy="18">p → −iħ ∇</tspan>
+            </text>
+          </g>
+
+          <!-- N8: Schrödinger -->
+          <g class="node"
+             id="schrodinger"
+             data-type="node"
+             data-target="node-schrodinger"
+             transform="translate(1020,310)">
+            <rect width="260" height="110"/>
+            <text x="130" y="40">
+              <tspan x="130" dy="-12" class="title">Équation de Schrödinger</tspan>
+              <tspan x="130" dy="22">iħ ∂ψ/∂t = Ĥψ</tspan>
+              <tspan x="130" dy="18">(1926)</tspan>
+            </text>
+          </g>
+
+          <!-- ==== ARÊTES ==== -->
+
+          <!-- Maupertuis → Lagrange -->
+          <path class="edge"
+                id="edge-maupertuis-lagrange"
+                data-type="edge"
+                data-target="edge-maupertuis-lagrange"
+                d="M340,400 C360,340 380,290 410,245" />
+          <text x="360" y="320" class="label">principe d&apos;action</text>
+
+          <!-- Maupertuis → Hamilton -->
+          <path class="edge"
+                id="edge-maupertuis-hamilton"
+                data-type="edge"
+                data-target="edge-maupertuis-hamilton"
+                d="M340,400 C360,460 380,510 410,555" />
+          <text x="360" y="480" class="label">S = ∫ L dt</text>
+
+          <!-- Lagrange → Hamilton–Jacobi -->
+          <path class="edge"
+                id="edge-lagrange-hj"
+                data-type="edge"
+                data-target="edge-lagrange-hj"
+                d="M640,205 C660,205 680,205 700,205" />
+          <text x="665" y="190" class="label">transformation canonique</text>
+
+          <!-- Hamilton → Hamilton–Jacobi -->
+          <path class="edge"
+                id="edge-hamilton-hj"
+                data-type="edge"
+                data-target="edge-hamilton-hj"
+                d="M640,525 C660,470 680,360 700,305" />
+          <text x="660" y="420" class="label">H(p,q) → S(q,t)</text>
+
+          <!-- Hamilton → Opérateurs -->
+          <path class="edge"
+                id="edge-hamilton-op"
+                data-type="edge"
+                data-target="edge-hamilton-op"
+                d="M640,525 C760,580 940,580 1020,545" />
+          <text x="810" y="595" class="label">H classique → Ĥ</text>
+
+          <!-- Maupertuis → Phase -->
+          <path class="edge"
+                id="edge-maupertuis-phase"
+                data-type="edge"
+                data-target="edge-maupertuis-phase"
+                d="M340,400 C460,430 600,495 700,525" />
+          <text x="500" y="455" class="label">S comme phase</text>
+
+          <!-- Hamilton–Jacobi → Phase -->
+          <path class="edge"
+                id="edge-hj-phase"
+                data-type="edge"
+                data-target="edge-hj-phase"
+                d="M830,260 C830,315 830,380 830,470" />
+          <text x="845" y="340" class="label">S/ħ = phase</text>
+
+          <!-- Hamilton–Jacobi → de Broglie -->
+          <path class="edge"
+                id="edge-hj-debroglie"
+                data-type="edge"
+                data-target="edge-hj-debroglie"
+                d="M960,205 C980,205 1000,205 1020,205" />
+          <text x="990" y="190" class="label">analogie optique</text>
+
+          <!-- Phase → de Broglie -->
+          <path class="edge"
+                id="edge-phase-debroglie"
+                data-type="edge"
+                data-target="edge-phase-debroglie"
+                d="M960,525 C1000,470 1040,345 1070,260" />
+          <text x="1005" y="420" class="label">ψ onde de matière</text>
+
+          <!-- de Broglie → Schrödinger -->
+          <path class="edge"
+                id="edge-debroglie-schrodinger"
+                data-type="edge"
+                data-target="edge-debroglie-schrodinger"
+                d="M1150,260 C1160,280 1170,300 1170,310" />
+          <text x="1180" y="285" class="label">E, p → (ω, k)</text>
+
+          <!-- Opérateurs → Schrödinger -->
+          <path class="edge"
+                id="edge-op-schrodinger"
+                data-type="edge"
+                data-target="edge-op-schrodinger"
+                d="M1150,470 C1150,440 1150,400 1150,365" />
+          <text x="1165" y="430" class="label">Ĥψ = iħ ∂ψ/∂t</text>
+
+        </svg>
+      </div>
+    </section>
+
+    <!-- Colonne droite : détails (accordéons) -->
+    <section id="details-section">
+      <h2>Détails des nœuds et des arêtes</h2>
+
+      <div class="accordion">
+
+        <!-- NŒUDS -->
+        <div class="accordion-item" data-group="nodes">
+          <button class="accordion-header" type="button">
+            Nœuds (concepts)
+          </button>
+          <div class="accordion-panel">
+            <article id="node-maupertuis" class="detail-block">
+              <h3>1. Principe de moindre action (Maupertuis, 1744)</h3>
+              <p>
+                Idée centrale : parmi tous les chemins possibles reliant deux états d'un système mécanique,
+                la nature réalise celui pour lequel l'action est minimale (ou stationnaire).
+                L'action S est définie comme l'intégrale d'une certaine quantité le long de la trajectoire.
+                Chez Maupertuis, S est souvent liée au produit p·dq (moment × déplacement), avec une
+                interprétation géométrico-variationsnelle. Ce principe devient la racine commune de
+                toute la mécanique analytique.
+              </p>
+            </article>
+
+            <article id="node-lagrange" class="detail-block">
+              <h3>2. Formalisme lagrangien (Lagrange, Euler)</h3>
+              <p>
+                On introduit le lagrangien L = T − V (énergie cinétique moins énergie potentielle).
+                La trajectoire réelle rend stationnaire l'intégrale d'action S = ∫ L dt.
+                En appliquant le calcul des variations, on obtient les équations d'Euler–Lagrange :
+                d/dt (∂L/∂ẋ<sub>i</sub>) − ∂L/∂x<sub>i</sub> = 0.
+                Ce formalisme reformule le principe de moindre action dans un cadre systématique,
+                bien adapté aux changements de coordonnées et aux contraintes.
+              </p>
+            </article>
+
+            <article id="node-hamilton" class="detail-block">
+              <h3>3. Formalisme hamiltonien (Hamilton)</h3>
+              <p>
+                On passe des variables (x, ẋ) aux variables canoniques (q, p), où p = ∂L/∂ẋ.
+                On définit le hamiltonien H(q,p,t) comme une transformation de Legendre de L,
+                souvent interprété comme l'énergie totale du système. Les équations de Hamilton sont :
+                ẋ<sub>i</sub> = ∂H/∂p<sub>i</sub>, &nbsp; ṗ<sub>i</sub> = −∂H/∂q<sub>i</sub>.
+                Ce formalisme met en valeur la structure symplectique et prépare le lien avec l'optique
+                et ensuite avec la mécanique quantique (H deviendra l'opérateur Ĥ).
+              </p>
+            </article>
+
+            <article id="node-hj" class="detail-block">
+              <h3>4. Équation de Hamilton–Jacobi</h3>
+              <p>
+                On cherche une fonction S(q,t), appelée fonction génératrice ou fonction d'action, telle que
+                ses dérivées spatiales donnent les moments : p<sub>i</sub> = ∂S/∂q<sub>i</sub>.
+                En réécrivant la dynamique en termes de S, on obtient l'équation de Hamilton–Jacobi :
+                H(q, ∂S/∂q, t) + ∂S/∂t = 0.
+                Cette équation est l'analogue, en mécanique classique, de l'équation d'Euler pour une phase d'onde
+                et sert de passerelle conceptuelle vers les ondes de matière.
+              </p>
+            </article>
+
+            <article id="node-phase" class="detail-block">
+              <h3>5. Action et phase : ψ ∼ exp(i S / ħ)</h3>
+              <p>
+                En mécanique quantique semi-classique, on relie la fonction d'onde ψ(q,t) à l'action classique
+                S(q,t) par une relation de type ψ ∝ exp(iS/ħ). La phase de l'onde est donc S/ħ.
+                Quand ħ → 0, les contributions dominantes dans une intégrale de chemin proviennent
+                des trajectoires où S est stationnaire : le principe de moindre action réapparaît
+                comme condition d'interférence constructive.
+              </p>
+            </article>
+
+            <article id="node-debroglie" class="detail-block">
+              <h3>6. Ondes de matière (de Broglie)</h3>
+              <p>
+                De Broglie postule que toute particule de moment p et d'énergie E est associée à une onde de
+                matière de vecteur d'onde k et de pulsation ω vérifiant : p = ħk, E = ħω.
+                Ce postulat généralise la dualité onde-corpuscule des photons à toute particule.
+                La phase de l'onde est φ = k·x − ωt, ce qui, via p = ∂S/∂x et E = −∂S/∂t,
+                met en lien direct S et la phase quantique.
+              </p>
+            </article>
+
+            <article id="node-op" class="detail-block">
+              <h3>7. Quantification &amp; opérateurs</h3>
+              <p>
+                La quantification canonique remplace les grandeurs classiques par des opérateurs agissant sur
+                la fonction d'onde :
+                E → iħ ∂/∂t, p → −iħ ∇, et plus généralement H(q,p) → Ĥ(q, −iħ∇).
+                Les relations de commutation [q<sub>i</sub>, p<sub>j</sub>] = iħ δ<sub>ij</sub>
+                encapsulent le principe d'incertitude.
+              </p>
+            </article>
+
+            <article id="node-schrodinger" class="detail-block">
+              <h3>8. Équation de Schrödinger (1926)</h3>
+              <p>
+                En appliquant la règle de quantification au hamiltonien classique, on obtient l'équation de Schrödinger :
+                iħ ∂ψ/∂t = Ĥ ψ. Pour une particule non relativiste dans un potentiel V(q), cela donne :
+                iħ ∂ψ/∂t = [ −(ħ² / 2m) ∇² + V(q) ] ψ.
+                Cette équation décrit l'évolution temporelle de ψ, dont |ψ|² est interprété comme densité de probabilité.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!-- ARÊTES -->
+        <div class="accordion-item" data-group="edges">
+          <button class="accordion-header" type="button">
+            Arêtes (relations)
+          </button>
+          <div class="accordion-panel">
+
+            <article id="edge-maupertuis-lagrange" class="detail-block">
+              <h3>Maupertuis → Lagrange : « principe d'action »</h3>
+              <p>
+                Le principe qualitatif de Maupertuis est reformulé quantitativement par Lagrange/Euler via
+                l'action S = ∫ L dt. La relation représente la systématisation du principe de moindre action
+                en un formalisme général (L = T − V) et l'apparition des équations d'Euler–Lagrange (condition δS = 0).
+              </p>
+            </article>
+
+            <article id="edge-maupertuis-hamilton" class="detail-block">
+              <h3>Maupertuis → Hamilton : « S = ∫ L dt »</h3>
+              <p>
+                En partant du même principe variationnel mais en changeant de variables (q,ẋ) → (q,p),
+                on obtient le formalisme hamiltonien. L'action S reste centrale, mais la dynamique est réécrite
+                en fonction de H(q,p,t), ouvrant la voie à l'analogie avec l'optique et à la quantification.
+              </p>
+            </article>
+
+            <article id="edge-lagrange-hj" class="detail-block">
+              <h3>Lagrange → Hamilton–Jacobi : « transformation canonique »</h3>
+              <p>
+                Les techniques lagrangiennes et hamiltoniennes conduisent au formalisme de Hamilton–Jacobi, où
+                l'on cherche une fonction génératrice S(q,t) qui transforme les variables canoniques pour rendre
+                la dynamique simple. On passe des équations d'Euler–Lagrange à une équation unique sur S :
+                H(q,∂S/∂q,t) + ∂S/∂t = 0.
+              </p>
+            </article>
+
+            <article id="edge-hamilton-hj" class="detail-block">
+              <h3>Hamilton → Hamilton–Jacobi : « H(p,q) → S(q,t) »</h3>
+              <p>
+                Vue hamiltonienne : on exprime les moments p comme gradients de S, p = ∂S/∂q, ce qui permet
+                de remplacer p dans H et d'obtenir l'équation de Hamilton–Jacobi. On passe d'une description
+                en termes de trajectoires (q(t),p(t)) à une description en termes d'une seule fonction S(q,t).
+              </p>
+            </article>
+
+            <article id="edge-hamilton-op" class="detail-block">
+              <h3>Hamilton → Opérateurs : « H classique → Ĥ »</h3>
+              <p>
+                En mécanique quantique, on associe au hamiltonien classique H(q,p) un opérateur Ĥ agissant sur ψ.
+                La relation symbolise la prescription de quantification canonique : p → −iħ∇, q → opérateur
+                de multiplication, etc. C’est le pont vers l'équation de Schrödinger.
+              </p>
+            </article>
+
+            <article id="edge-maupertuis-phase" class="detail-block">
+              <h3>Maupertuis → Action/phase : « S comme phase »</h3>
+              <p>
+                Le principe de moindre action suggère que S joue le rôle de phase dans la description ondulatoire.
+                Dans les intégrales de chemin, chaque trajectoire contribue avec exp(iS/ħ). Les contributions
+                se renforcent là où S est stationnaire, ce qui reproduit le principe de moindre action.
+              </p>
+            </article>
+
+            <article id="edge-hj-phase" class="detail-block">
+              <h3>Hamilton–Jacobi → Action/phase : « S/ħ = phase »</h3>
+              <p>
+                L'équation de Hamilton–Jacobi décrit directement l'évolution de S(q,t). En posant φ = S/ħ comme
+                phase d'une onde, on obtient l'analogue d'une équation d'Euler pour une phase, ce qui prépare
+                l'écriture d'une équation d'onde pour ψ.
+              </p>
+            </article>
+
+            <article id="edge-hj-debroglie" class="detail-block">
+              <h3>Hamilton–Jacobi → de Broglie : « analogie optique »</h3>
+              <p>
+                Il existe une analogie formelle entre l'optique géométrique (rayons) et la mécanique classique :
+                l'équation de Hamilton–Jacobi est analogue à l'équation de l'optique en approximation des rayons.
+                De Broglie exploite cette analogie pour postuler des ondes associées aux particules.
+              </p>
+            </article>
+
+            <article id="edge-phase-debroglie" class="detail-block">
+              <h3>Action/phase → de Broglie : « ψ onde de matière »</h3>
+              <p>
+                En identifiant ψ ∼ exp(iS/ħ) et en introduisant E = ħω, p = ħk, la phase de l'onde de matière
+                devient φ = k·x − ωt, cohérente avec S(q,t). La fonction d'onde de de Broglie réalise concrètement
+                l'idée que l'action classique se lit comme une phase.
+              </p>
+            </article>
+
+            <article id="edge-debroglie-schrodinger" class="detail-block">
+              <h3>de Broglie → Schrödinger : « E, p → (ω, k) »</h3>
+              <p>
+                En combinant les relations de de Broglie (p = ħk, E = ħω) avec l'expression classique de l'énergie
+                d'une particule, Schrödinger cherche une équation d'onde dont la dispersion reproduise E(p).
+                Cette démarche conduit à l'équation de Schrödinger pour ψ.
+              </p>
+            </article>
+
+            <article id="edge-op-schrodinger" class="detail-block">
+              <h3>Opérateurs → Schrödinger : « Ĥψ = iħ ∂ψ/∂t »</h3>
+              <p>
+                En remplaçant E et p par leurs opérateurs (E → iħ∂/∂t, p → −iħ∇) dans H, on obtient
+                l'équation de Schrödinger iħ∂ψ/∂t = Ĥψ. C’est le dernier maillon : la règle de quantification
+                donne directement le formalisme complet de la mécanique quantique non-relativiste.
+              </p>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <small>Carte et texte libres d'usage pédagogique.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
