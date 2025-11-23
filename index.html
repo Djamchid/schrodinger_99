@@ -19,9 +19,14 @@
     <section id="mindmap-section">
       <h2>Carte mentale</h2>
       <p class="hint">Clique sur un nœud ou une arête pour afficher l'explication correspondante.</p>
+      <div class="zoom-controls">
+        <button id="zoom-in" title="Zoom avant">+</button>
+        <button id="zoom-reset" title="Réinitialiser le zoom">⊙</button>
+        <button id="zoom-out" title="Zoom arrière">−</button>
+      </div>
       <div class="mindmap-wrapper">
         <!-- SVG de la mindmap -->
-        <svg width="1300" height="800" viewBox="0 0 1300 800"
+        <svg viewBox="0 0 1300 800"
              xmlns="http://www.w3.org/2000/svg" class="mindmap-svg">
 
           <defs>
@@ -75,12 +80,14 @@
           <!-- Fond -->
           <rect x="0" y="0" width="1300" height="800" fill="#ffffff"/>
 
-          <!-- Titre central -->
-          <text x="650" y="60" class="title">
-            Du principe d&apos;action de Maupertuis à l&apos;équation de Schrödinger
-          </text>
+          <!-- Groupe transformable pour le zoom -->
+          <g id="zoomable-content">
+            <!-- Titre central -->
+            <text x="650" y="60" class="title">
+              Du principe d&apos;action de Maupertuis à l&apos;équation de Schrödinger
+            </text>
 
-          <!-- ==== NŒUDS ==== -->
+            <!-- ==== NŒUDS ==== -->
 
           <!-- N1: Maupertuis -->
           <g class="node"
@@ -282,6 +289,7 @@
                 d="M1150,470 C1150,440 1150,400 1150,365" />
           <text x="1165" y="430" class="label">Ĥψ = iħ ∂ψ/∂t</text>
 
+          </g><!-- Fin du groupe zoomable -->
         </svg>
       </div>
     </section>

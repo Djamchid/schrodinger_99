@@ -62,17 +62,59 @@ body {
   color: #6b7280;
 }
 
+.zoom-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  justify-content: flex-end;
+}
+
+.zoom-controls button {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #374151;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoom-controls button:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+  transform: scale(1.05);
+}
+
+.zoom-controls button:active {
+  transform: scale(0.95);
+}
+
 .mindmap-wrapper {
   width: 100%;
-  overflow: auto;
+  height: 70vh;
+  min-height: 500px;
+  overflow: hidden;
   border-radius: 0.75rem;
   border: 1px solid #e5e7eb;
   background: radial-gradient(circle at top, #f9fafb 0, #ffffff 60%);
+  position: relative;
 }
 
 .mindmap-svg {
   display: block;
-  max-width: none; /* scroll si trop large */
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+.mindmap-svg:active {
+  cursor: grabbing;
 }
 
 /* Accordéon */
@@ -170,5 +212,23 @@ body {
 
   #details-section {
     order: 2;
+  }
+
+  .mindmap-wrapper {
+    height: 60vh;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mindmap-wrapper {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .zoom-controls button {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
   }
 }
